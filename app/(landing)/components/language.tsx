@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-interface FlagIconProps {
+interface LanguageProps {
   language: string;
   isoCode: string;
 }
 
-const FlagIcon = ({language, isoCode}: FlagIconProps) => {
+const Language = ({language, isoCode}: LanguageProps) => {
   return (
     <Button size="lg" variant="ghost" className="w-full cursor-default">
       <Image
@@ -21,4 +21,4 @@ const FlagIcon = ({language, isoCode}: FlagIconProps) => {
   );
 };
 
-export default FlagIcon;
+export default Language;
