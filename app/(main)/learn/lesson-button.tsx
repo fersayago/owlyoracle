@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Check, Crown, Star } from "lucide-react";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
@@ -67,9 +69,7 @@ const LessonButton = ({
               Start
               <div className="absolute left-1/2 -bottom-2 w-0 h-0 border-x-8 border-x-transparent border-t-8 transform -translate-x-1/2" />
             </div>
-            progressBar
-            {/* // TODO: FIX CIRCULAR PROGRESSBAR 4:39 */}
-            {/* <CircularProgressbarWithChildren
+            <CircularProgressbarWithChildren
               value={Number.isNaN(percentage) ? 0 : percentage}
               styles={{
                 path: {
@@ -77,7 +77,7 @@ const LessonButton = ({
                 },
                 trail: {
                   stroke: "#e5e7eb",
-                }
+                },
               }}
             >
               <Button
@@ -89,16 +89,30 @@ const LessonButton = ({
                   className={cn(
                     "h-10 w-10",
                     locked
-                    ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
-                    : "fill-green-500 text-green-500 stroke-green-500"
+                      ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
+                      : "fill-primary-foreground text-primary-foreground",
+                    isCompleted && "fill-none stroke-[4]"
                   )}
                 />
               </Button>
-            </CircularProgressbarWithChildren> */}
-
+            </CircularProgressbarWithChildren>
           </div>
         ) : (
-          <div>algo</div>
+          <Button
+            size="rounded"
+            variant={locked ? "locked" : "secondary"}
+            className="h-[70px] w-[70px] border-b-8"
+          >
+            <Icon
+              className={cn(
+                "size-10",
+                locked
+                  ? "fill-neutral-400 stroke-neutral-400 text-neutral-400"
+                  : "fill-primary-foreground text-primary-foreground",
+                isCompleted && "fill-none stroke-[4]"
+              )}
+            />
+          </Button>
         )}
       </div>
     </Link>
