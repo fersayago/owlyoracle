@@ -21,6 +21,7 @@ const UnitBanner = ({ title, description }: UnitBannerProps) => {
           className="hidden xl:flex border-2 border-b-4 active:border-b-2"
         >
           <NotebookText className="mr-2" />
+          <span className="hidden 2xl:flex">Continue</span>
         </Button>
       </Link>
     </div>
