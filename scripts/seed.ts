@@ -179,8 +179,32 @@ const main = async () => {
         challengeId: 3,
         imageSrc: "/robot.svg",
         correct: true,
-        text: "el robot",
+        text: "el robot", 
         audioSrc: "/es_robot.mp3",
+      },
+    ]);
+
+    await db.insert(schema.challenges).values([
+      {
+        id: 4,
+        lessonId: 2,
+        type: "SELECT",
+        order: 1,
+        question: "Which one of these is the Spanish word for 'the man'?",
+      },
+      {
+        id: 5,
+        lessonId: 2,
+        type: "ASSIST",
+        order: 2,
+        question: '"The woman"',
+      },
+      {
+        id: 6,
+        lessonId: 2,
+        type: "SELECT",
+        order: 3,
+        question: "Which one of these is the Spanish word for 'the robot'?",
       },
     ]);
 
