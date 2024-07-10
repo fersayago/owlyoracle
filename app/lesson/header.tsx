@@ -2,7 +2,7 @@ import { InfinityIcon, X } from "lucide-react";
 
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
-import { useExitModal } from "@/store/use-exit-model";
+import { useExitModal } from "@/store/use-exit-modal";
 
 interface HeaderProps {
   hearts: number;
